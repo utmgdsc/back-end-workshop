@@ -23,19 +23,27 @@ db.init_app(app)
 def index():
     return 'Hello World!'
 
-@app.route('/get-all-articles', methods=['GET'])
+# This is a decorator to read more about this check this link:
+# https://realpython.com/primer-on-python-decorators/#simple-decorators
+@app.route('/api/articles', methods=['GET'])
+# This function is run when this api route is called
 def getArticles():
     try:
+        # Getting all the articles from database using SQLAlcemy
         a = Articles.query.all()
+        # Since we now have all articles as objects we need to convert them
+        # into a form that we can use to transfer data to the frontend
         a = [art.serialize() for art in a]
+        # Returning JSON data
         return jsonify({
                 "success": True,
                 "articles": a
             })
     except BaseException:
+        # This method is used to abort send a error message
         abort(422)
 
-@app.route('/get-article/<int:id>', methods=['GET'])
+@app.route('/api/article/<int:id>', methods=['GET'])
 def getArticle(id):
     try:
         a = Articles.query.filter_by(id=id).first()
@@ -47,7 +55,7 @@ def getArticle(id):
         abort(422)
     
 
-@app.route('/add-article', methods=['POST'])
+@app.route('/api/add-article', methods=['POST'])
 def addArticle():
     details = request.get_json()
     try:
@@ -61,7 +69,7 @@ def addArticle():
     except BaseException:
         abort(422)
 
-@app.route('/article/<int:id>', methods=['PUT'])
+@app.route('/api/update-article/<int:id>', methods=['PUT'])
 def editArticle(id):
     details = request.get_json()
     a = None

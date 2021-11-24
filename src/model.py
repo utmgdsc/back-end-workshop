@@ -8,6 +8,7 @@ db = SQLAlchemy()
 class Articles(db.Model):
     __tablename__ = 'Articles'
 
+    # describing data in database
     id = Column(BigInteger().with_variant(Integer, 'postgresql'), primary_key=True)
     title = Column(VARCHAR(100), nullable=False)
     body = Column(Text())
