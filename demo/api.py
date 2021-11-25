@@ -13,9 +13,11 @@ database = os.environ.get('DATABASE')
 
 # Initializing the application
 app = Flask(__name__)
+
 # Connecting to the postgres server
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user_name}:{password}@{host}:5432/{database}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 # connecting the db with the application
 db.init_app(app)
 
