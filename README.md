@@ -4,12 +4,14 @@ In this workshop we go over AWS and Python Flask. The slides can be found [here]
 ## Installation
 First clone the repository and open it in the terminal.
 
-Assuming you already have Python 3 installed. The first thing you need to do is download Flask, Flask SQLAlchemy and dotenv for making this application run as follows:
+Assuming you already have Python 3 installed. The first thing you need to do is download Flask, Flask SQLAlchemy, dotenv and psycopg2-binary for making this application run as follows:
 ```
-pip3 install Flask Flask-SQLAlchemy dotenv
+pip3 install Flask Flask-SQLAlchemy dotenv psycopg2-binary
 ```
 
-Then we need to set up the .env file which will be used to set up the database.
+You will have to set up a database by yourself. Once that is done follow the next steps.
+
+We need to set up the .env file which will be used to connect the database to flask.
 
 1. Create a .env file in the main directory
 ```
@@ -37,7 +39,27 @@ python3 ./src/api.py
 ## Endpoints
 ```
 GET /api/article
-GET /api/article/id
+```
+```
+GET /api/article/:id
+```
+```
 POST /api/article
-PUT /api/article/id
+
+Expected Type: raw JSON
+
+Expected Data: {
+    'title': 'Welcome to GDSC',
+    'author': 'gdscutm',
+    'body': 'Lists of workshop'
+}
+```
+```
+PUT /api/article/:id
+
+Expected Type: raw JSON
+
+Expected Data: {
+    'title': 'Welcome to UTMGDSC'
+}
 ```
