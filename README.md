@@ -1,15 +1,15 @@
 # Backend Workshop
-In this workshop we go over AWS and Python Flask. The slides can be found [here](https://docs.google.com/presentation/d/1u0lOjvQeCHM8IaPHoUb6EpbC5hCHY9Cb6YfZYXOzC_U/edit?usp=sharing)
+In this workshop we go over AWS, Flask, and Back-end development as whole! The slides can be found [here](https://docs.google.com/presentation/d/1u0lOjvQeCHM8IaPHoUb6EpbC5hCHY9Cb6YfZYXOzC_U/edit?usp=sharing)
 
 ## Installation
 First clone the repository and open it in the terminal.
 
 Assuming you already have Python 3 installed. The first thing you need to do is download Flask, Flask SQLAlchemy, dotenv and psycopg2-binary for making this application run as follows:
 ```
-pip3 install Flask Flask-SQLAlchemy dotenv psycopg2-binary
+pip3 install Flask Flask-SQLAlchemy psycopg2-binary python-dotenv 
 ```
 
-You will have to set up a database by yourself. Once that is done follow the next steps.
+You will have to set up a PostgreSQL database by yourself (you can set it up on AWS like we did in the workshop or run it locally using a tool like [this](https://postgresapp.com/) . Once that is done follow the next steps.
 
 We need to set up the .env file which will be used to connect the database to flask.
 
@@ -36,7 +36,7 @@ To run the API we need to run the API file with python3 as shown:
 python3 ./src/api.py
 ```
 
-## Endpoints
+## Example usage (We recommend using a tool like [Postman](https://www.postman.com/downloads/) to send these requests)
 ```
 GET /api/article
 ```
