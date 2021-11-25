@@ -68,12 +68,14 @@ def getArticle(id):
             "articles": article.serialize()
         })
     except BaseException:
+        # you ideally would want to do more error checking than this
         abort(500)
 
 
 @app.route('/api/article', methods=['POST'])
 def addArticle():
     details = request.get_json()
+    print(details)
     try:
         article = Articles(
             details["title"], details["body"], details["author"])
@@ -84,6 +86,7 @@ def addArticle():
             "articles": article.serialize()
         })
     except BaseException:
+        # you ideally would want to do more error checking than this
         abort(500)
 
 
@@ -99,6 +102,7 @@ def editArticle(id):
             article.body = details['body']
         db.session.commit()
     except BaseException:
+        # you ideally would want to do more error checking than this
         abort(500)
 
     if article:
