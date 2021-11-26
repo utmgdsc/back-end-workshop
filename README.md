@@ -1,6 +1,9 @@
 # Backend Workshop
 In this workshop we go over AWS, Flask, and Back-end development as whole! The slides can be found [here](https://docs.google.com/presentation/d/1u0lOjvQeCHM8IaPHoUb6EpbC5hCHY9Cb6YfZYXOzC_U/edit?usp=sharing)
 
+# Recording [here](https://utoronto.zoom.us/rec/share/fPXI3Choqi0xasjFdZw_VPJiG3twsj19n_7I9WjWZBp7bwngvrYrYtXSrV5N5CA7.4vNlAieeAo9-nhIW)
+Access Passcode: $adf23Afsadf
+
 ## Installation
 First clone the repository and open it in the terminal.
 
